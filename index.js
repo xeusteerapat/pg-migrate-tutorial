@@ -19,7 +19,17 @@ app.get('/posts', async (req, res) => {
   `);
 
   res.send(`
-    <table>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <title>Document</title>
+</head>
+<body>
+  <table class="table table-striped">
       <thead>
         <tr>
           <th>id</th>
@@ -42,18 +52,26 @@ app.get('/posts', async (req, res) => {
       </tbody>
     </table>
 
-    <form method="POST">
+    <div class="container">
         <h3>Create Post</h3>
-        <div>
-            <lable>Longitude</lable>
-            <input name="lng"/>
-            <lable>Latitude</lable>
-            <input name="lat"/>
+        <form method="POST">
+        <div class="mb-3">
+          <div class="col-sm-10">
+            <lable class="form-label">Longitude</lable>
+            <input name="lng" class="form-control"/>
+          </div>
+          <div class="col-sm-10">
+            <lable class="form-label">Latitude</lable>
+            <input name="lat" class="form-control"/>
+          </div>
         </div> 
-        <button type="submit">
-        Create
+        <button type="submit" class="btn btn-primary">
+          Create
         </button>
     </form>
+    </div>
+</body>
+</html>
   `);
 });
 
